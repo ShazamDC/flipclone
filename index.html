@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/header.css">
+    <link rel="stylesheet" href="assests/css/font-awesome.css">
+    <link rel="stylesheet" href="assests/css/products.css">
+    <link rel="stylesheet" href="assests/css/media_css.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="./js/items/item.js"></script>
+      <script src="./bower_components/angular-route/angular-route.min.js"></script>
+<script src="./app.js"></script>
+<script src="./js/routes-const.js"></script>
+<script src="./js/factory/electronicsfac.js"></script>
+<script src="./js/factory/checkoutfac.js"></script>
+<script src="./js/factory/furniturefac.js"></script>
+<script src="./js/factory/homefac.js"></script>
+<script src="./js/factory/tvfac.js"></script>
+<script src="./js/factory/menfac.js"></script>
+<script src="./js/factory/sportsfac.js"></script>
+<script src="./js/factory/womenfac.js"></script>
+<script src="./js/controller/electronicsctrl.js"></script>
+<script src="./js/factory/checkoutfac.js"></script>
+<script src="./js/controller/menctrl.js"></script>
+<script src="./js/controller/furniturectrl.js"></script>
+<script src="./js/controller/flipkartctrl.js"></script>
+<script src="./js/controller/loginctrl.js"></script>
+<script src="./js/controller/homectrl.js"></script>
+<script src="./js/controller/signupctrl.js"></script>
+<script src="./js/controller/checkoutctrl.js"></script>
+<script src="./js/controller/tvctrl.js"></script>
+<script src="./js/controller/sportsctrl.js"></script>
+<script src="./js/controller/womenctrl.js"></script>
+<script src='routes.js'></script>
+</head>
+
+<body ng-app="myapp" >
+  <div ng-controller="flipcartctrl">
+    <header id="header_pc" class="clearfix">
+      <div class="container">
+          <div id="top_nav">
+              <ul>
+                <li><a  href="">Sell on Flipkart</a></li>
+<li><a href="">Advertise</a></li>
+<li><a href="">Gift card</a></li>
+<li><a href="">Download app</a></li>
+<li><a href="">24x7 Customer care</a></li>.
+<li><a href="">Track Order</a></li>
+<li><a href=""><i class="fa fa-bell" aria-hidden="true" ></i></a></li>
+<li><a ng-click="showSortOptions()" ng-href="#/signup">Signup</a></li>
+<li><a ng-click="showSortOptions()" ng-href="#/login">LogIn</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </ul>
+          </div>
+          <div id="main_nav">
+              <div class="logo"><a ng-click="showSortOptions()" href="index.html"><img src="assests/images/logo.png" alt="logo"></a></div>
+              <div class="search_box">
+                  <form action="index.html">
+                      <input type="text" placeholder="Search for Products, Brands and More">
+                      <input type="submit" id="search_button" value=""> </form>
+              </div>
+              <div  class=" cart">
+                  <a  ng-href="#/checkout" ng-click="showSortOptions()"> <span  id="cart_font"  ><i class="fa fa-shopping-cart"></i>
+                  </span> 
+                  cart <span id="cart_number">{{noofproducts}}</span> </a>
+                  
+              </div>
+          </div>
+          <div id="jump_nav">
+              <ul>
+                  <li>                    <a class="nav-link" ng-click="UnshowSortOptions()"  ng-href="#/electronics">Electronics <span class="sr-only">(current)</span></a>
+                      <div class="dropdown">
+                          <div class="five-col ">
+                              <div class="coloumn">
+                                  <h4>Mobiles</h4>
+                                  <ul>
+                                      <li>samsung</li>
+                                      <li>lenovo</li>
+                                      <li>mi</li>
+                                      <li>Motorola</li>
+                                      <li>leEco</li>
+                                      <li>apple</li>
+                                      <li>asus</li>
+                                      <li>micromax</li>
+                                  </ul>
+                                  <h4>Fk Exclusive Mobiles</h4>
+                                  <h4>New and Popular Models</h4>
+                                  <ul>
+                                      <li>lenovo P2</li>
+                                      <li>redmi Note 4</li>
+                                  </ul>
+                              </div>
+                              <div class="coloumn">
+                                  <h4>Mobiles Accessories</h4>
+                                  <ul>
+                                      <li>mobile cases</li>
+                                      <li>headphones & headsets</li>
+                                      <li>power banks</li>
+                                      <li>screenguards</li>
+                                      <li>memory cards</li>
+                                      <li>smart headphones</li>
+                                      <li>cables</li>
+                                      <li>chargers</li>
+                                      <li>selfie sticks</li>
+                                  </ul>
+                                  <h4>smart wearable tech</h4>
+                                  <ul>
+                                      <li>smart watches</li>
+                                      <li>smart glasses(VR)</li>
+                                      <li>smart bends</li>
+                                  </ul>
+                              </div>
+                              <div class="coloumn">
+                                  <h4>Mobiles</h4>
+                                  <ul>
+                                      <li>business laptops</li>
+                                  </ul>
+                                  <h4>desktop PC's</h4>
+                                  <h4>gaming & accessories</h4>
+                                  <h4>computer accessories</h4>
+                                  <ul>
+                                      <li>external hard disks</li>
+                                      <li>pendrive</li>
+                                      <li>laptop bags</li>
+                                      <li>mouse</li>
+                                      <li>keyboards</li>
+                                  </ul>
+                                  <h4>Computer Peripherals</h4>
+                                  <ul>
+                                      <li>printers & ink catridges</li>
+                                      <li>monitors</li>
+                                  </ul>
+                                  <h4>tablets</h4> </div>
+                              <div class="coloumn">
+                                  <h4>Televisions</h4>
+                                  <h4>Home Entertainment</h4>
+                                  <ul>
+                                      <li>ipods & MP3 players</li>
+                                      <li>home theaters</li>
+                                      <li>speakers</li>
+                                  </ul>
+                                  <h4>smart home automation</h4>
+                                  <h4>camera</h4>
+                                  <ul>
+                                      <li>DSLR</li>
+                                      <li>point & shoot</li>
+                                      <li>sports and Lifestyle</li>
+                                  </ul>
+                                  <h4>camera accessories</h4>
+                                  <ul>
+                                      <li>memory cards</li>
+                                  </ul>
+                                  <h4>network components</h4>
+                                  <ul>
+                                      <li>routers</li>
+                                  </ul>
+                              </div>
+                              <div class="coloumn">
+                                  <h4>featured</h4>
+                                  <ul>
+                                      <li>flipkart smartBuy</li>
+                                      <li>li-Polymer Power banks</li>
+                                      <li>sony PS4 pro & slim</li>
+                                      <li>fliptech-The Gadget Store</li>
+                                      <li>apple products</li>
+                                      <li>microsoft store</li>
+                                      <li>lenovo phab series</li>
+                                      <li>mobile exchange offers</li>
+                                      <li>laptop exchange offers</li>
+                                      <li>hauwei smart watch</li>
+                                      <li>bose</li>
+                                      <li>JB speakers</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  
+                  <li>                    <a class="nav-link"ng-click="UnshowSortOptions()" ng-href="#/tv">TVs &amp; Appliances <span class="sr-only">(current)</span></a>                  </li>
+                  <li>                    <a class="nav-link" ng-click="UnshowSortOptions()" ng-href="#/men">Men <span class="sr-only">(current)</span></a>                  </li>
+                  <li>                    <a class="nav-link" ng-click="UnshowSortOptions()" ng-href="#/women">Women <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li><a href="">BABY & KIDS</a></li>
+                  <li>                    <a class="nav-link" ng-click="UnshowSortOptions()" ng-href="#/furniture">Home &amp; Furniture <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li>                    <a class="nav-link" ng-click="UnshowSortOptions()" ng-href="#/sports">Sports Books &amp; More<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li><a ng-click="showSortOptions()" ng-href="#/offer">OFFER ZONE</a></li>
+              </ul>
+          </div>
+      </div>
+  </header>
+ 
+  <header id="header_mobile" class="clearfix">
+  <div class="main_nav_list">
+      <div class="nav_list"><a href=""><i class="fa fa-bars" area-hidden="true"></i></a></div>
+      <div class="logo"><img src="assests/images/logo.png" alt=""></div>
+      <div><a href=""><i class="fa fa-bell" area-hidden="true"></i></a></div>
+      <div><a href=""><i class="fa fa-shopping-cart" area-hidden="true"></i></a></div>
+  </div>
+  <div class="search_box_mobile">
+      <form action="index.html">
+          <input type="submit" id="search_button" value="">
+          <input type="text" placeholder="Search for Products, Brands and More">
+          
+      </form>
+  </div>
+  <div class="categories">
+      <div class="jump_cat">
+          <a href=""> <i class="fa fa-tag" area-hidden="true"></i> <span>Offers</span> </a>
+      </div>
+      <div class="jump_cat">
+          <a href=""> <i class="fa fa-mobile-phone" area-hidden="true"></i> <span>Electronics</span> </a>
+      </div>
+      <div class="jump_cat">
+          <a href=""> <i class="fa fa-pied-piper" area-hidden="true"></i> <span>Fashion</span> </a>
+      </div>
+      <div class="jump_cat">
+          <a href=""> <i class="fa fa-home" area-hidden="true"></i> <span>Home</span> </a>
+      </div>
+      <div class="jump_cat">
+          <a href=""> <i class="fa fa-television" area-hidden="true"></i> <span>Applications</span> </a>
+      </div>
+  </div>
+</header>
+
+
+
+
+
+
+
+<div    id="items">
+    <div class="row">
+    <div ng-show="sortOptions"  class="col col-lg-2">
+      <div id="filters">
+          <div class="form-group">
+              <label for="sel1">Sort &nbsp; Type:</label>
+              <select ng-model="sort" class="form-control" id="sel1">
+                <option value="name">Sort by Name</option>
+                <option value="price">Sort by Price</option>
+                <option value="discount">Sort by Discount</option>
+              </select>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" ng-model="rev">Descending Order</label>
+              </div>
+
+
+
+
+
+
+
+
+
+              <div class="container-fluid">
+                <div class="body-content">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="filter-section">
+                                <h3>Filter</h3>
+                                <div class="filter-categories">
+                                    <div class="filter-price">
+                                        <div class="range-slider">
+                                            <input value="25000" min="0" max="120000" step="500" type="range" />
+                                            <input value="50000" min="0" max="120000" step="500" type="range" />
+                                            <svg width="100%" height="24">
+                                                <line x1="4" y1="0" x2="300" y2="0" stroke="#444" stroke-width="12" stroke-dasharray="1 28"></line>
+                                            </svg>
+                                            <span>Min
+                                                <input type="number" value="25000" min="0" max="120000" />
+                                                <input type="number" value="50000" min="0" max="120000" /> Max
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">BRANDS NAME</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <div class="list-group" id="list1">
+                                                        <a href="#" class="list-group-item">First item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Second item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Third item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">More item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Another
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">COLOR</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="list-group" id="list1">
+                                                        <a href="#" class="list-group-item">First item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Second item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Third item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">More item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Another
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">SIZE</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="list-group" id="list1">
+                                                        <a href="#" class="list-group-item">First item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Second item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Third item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">More item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Another
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour">BRANDS NAME</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseFour" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="list-group" id="list1">
+                                                        <a href="#" class="list-group-item">First item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Second item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Third item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">More item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Another
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive">COLOR</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseFive" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="list-group" id="list1">
+                                                        <a href="#" class="list-group-item">First item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Second item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Third item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">More item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Another
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSix">SIZE</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseSix" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="list-group" id="list1">
+                                                        <a href="#" class="list-group-item">First item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Second item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Third item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">More item
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                        <a href="#" class="list-group-item">Another
+                                                            <input type="checkbox" class="pull-right">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="product-screen">
+                                <div class="row">
+                                    <div class="col-md-4" ng-repeat="item in productData | filter:{'name':searchbyname}">
+                                        <a ng-href="/#chooseproduct/{{subcategory}}/{{item._id}}">
+                                            <div class="product-details">
+                                                <div class="product-img">
+                                                    <img ng-src="{{item.imgUrl}}" class="img-responsive" alt="">
+                                                </div>
+                                                <div class="product-desc">
+                                                    <h3 ng-bind="item.name"></h3>
+                                                    <p>Price :
+                                                        <span ng-bind="item.purchaseprice"></span>
+                                                    </p>
+                                                    <ul ng-repeat="desc in item.shortdescription">
+                                                        <li>
+                                                            <a href="#">{{desc}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      </div>
+      <div class="col">
+<ng-view></ng-view>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<footer id="myFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 myCols">
+                <h5>Company Name / Location</h5>
+                <ul>
+                    <li>
+                        <a href="#">Name of the Company</a>
+                    </li>
+                </ul>
+                <div class="location">
+                    <div class="nav-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.863338632153!2d77.2888127439148!3d28.623292668741943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4ae2432f233%3A0x5b32c73d97685357!2sVinod+Nagar%2C+Block+B%2C+Block+D%2C+West+Vinod+Nagar%2C+Delhi%2C+110092!5e0!3m2!1sen!2sin!4v1502618627486"
+                            width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>Customer Service</h5>
+                <ul>
+                    <li>
+                        <a href="#">Help</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="#">My Account</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>About Us</h5>
+                <ul>
+                    <li>
+                        <a href="#">Investors</a>
+                    </li>
+                    <li>
+                        <a href="#">Careers</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>Call Us</h5>
+                <ul>
+                    <li>
+                        <a href="#">Phone Num</a>
+                    </li>
+                    <li>
+                        <a href="#">Timmings</a>
+                    </li>
+                    <li>
+                        <a href="#">Address</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="social-networks">
+        <a href="#" class="twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="facebook">
+            <i class="fa fa-facebook-official"></i>
+        </a>
+        <a href="#" class="google">
+            <i class="fa fa-google-plus"></i>
+        </a>
+        <a href="#" class="google">
+            <i class="fa fa-youtube"></i>
+        </a>
+        <a href="#" class="instagram">
+            <i class="fa fa-instagram"></i>
+        </a>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2016 Copyright Text </p>
+    </div>
+</footer>
+</div>
+</div>
+</body>
+
+</html>

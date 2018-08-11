@@ -1,0 +1,56 @@
+<form id="signup" name="loginform">
+        <div class="form-row">
+        <label for="uname">Name</label>
+        <input class="form-control" ng-model="uname" name="uname" type="text" pattern="[a-zA-Z]{5,10}" required title="Name Must be 5 to 10 characters">
+        <span class="error" ng-show="loginform.uname.$touched && loginform.uname.$pristine && loginform.uname.$error.required">UserName Can't be Blank!</span>
+        <span class="error" ng-show="loginform.uname.$touched && loginform.uname.$dirty && loginform.uname.$error.pattern">User Name Must be b/w 5 to 10 Characters</span>
+       </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="email" >Email</label>
+        <input type="email" class="form-control" id="mail" name="mail" ng-model="mail"  placeholder="Email">
+        <span class="error" ng-show="loginform.mail.$touched==true && loginform.mail.$pristine==false && loginform.mail.$dirty==true" >Email Can't be Blank!</span>
+       </div>
+      <div class="form-group col-md-6">
+        <label for="pass">Password</label>
+        <input type="password" class="form-control" name="pass" ng-model="pass" id="pass" placeholder="Password"  pattern="[a-zA-Z]{5,10}" required title="Name Must be 5 to 10 characters">
+        <span class="error" ng-show="loginform.pass.$touched && loginform.pass.$pristine && loginform.pass.$error.required">PassWord Can't be Blank!</span>
+        <span class="error" ng-show="loginform.pass.$touched && loginform.pass.$dirty && loginform.pass.$error.pattern">PassWord Name Must be b/w 5 to 10 Characters</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
